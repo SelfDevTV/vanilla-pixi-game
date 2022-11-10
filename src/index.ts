@@ -1,9 +1,12 @@
 import "./styles.css";
+import { Application, Sprite, Texture } from "pixi.js";
 
-document.getElementById("app").innerHTML = `
-<h1>Hello Vanilla!</h1>
-<div>
-  We use the same configuration as Parcel to bundle this sandbox, you can find more
-  info about Parcel 
-  <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
-</div>`;
+const app = new Application({
+  backgroundColor: "orange",
+});
+
+document.body.appendChild(app.view as unknown as Node);
+
+const player = Sprite.from(Texture.WHITE);
+
+app.stage.addChild(player);
